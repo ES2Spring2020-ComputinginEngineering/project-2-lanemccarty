@@ -28,7 +28,7 @@ def normalizeData(glucose, hemoglobin, classification):
 
 def graphData(glucose, hemoglobin, classification):
 #Graphs the scaled values of hemoglobin and glucose. It colors each point based on
-#its classification.
+#its classification. Takes three arguments glucose, hemoglobin, and classification.
     plt.figure()
     glucose, hemoglobin, classification = normalizeData(glucose, hemoglobin,classification)
     plt.plot(hemoglobin[classification==1],glucose[classification==1], "k.", label = "Class 1")
@@ -51,16 +51,18 @@ def createTestCase():
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 def calculateDistanceArray(newglu, newhemo, glucose, hemoglobin):
-#returns the distance array which contains the distsance calculated to the new point from each
-#point in the existing dataset. 
+#Takes the arguments newel, newhemo, glucose, and hemoglobin. returns the distance array which contains 
+#the distance calculated to the new point from each point in the existing dataset. 
     distance = np.sqrt(((newglu-glucose)**2)+(newhemo-hemoglobin)**2)
     return distance
 
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 def nearestNeighborClassifier(newglu, newhemo, glucose, hemoglobin, classification):
+#Calls the distance function to find the min distance to the closest points to then read their classifications. 
 #returns the classification for the point (either a 0 or 1) based on the closest point. Returns 
 #an integer which is the class of the data point (test case).
+    distance = calculateDistanceArray(newglu, newhemo, glucose, hemoglobin)
     min_index = np.argmin(distance)
     nearest_class = classification[min_index]
     return nearest_class
@@ -93,7 +95,7 @@ def kNearestNeighborClassifier(k, newglu, newhemo, glucose, hemoglobin, classifi
     k_class = np.median(k_classifications)
     print("closest points:", k_classifications)
     print("classifcation:", k_class)
-    return k_class
+
 
 k = 5
 
