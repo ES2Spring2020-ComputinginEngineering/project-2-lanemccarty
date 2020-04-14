@@ -37,7 +37,7 @@ Graphs the scaled values of hemoglobin and glucose. It colors each point based o
 takes no arguments. Creates a random test case that falls within the min and max values of the training hemo and gluco data. Returns the values newhemo, newglu.
 
 -def calculateDistanceArray(newglu, newhemo, glucose, hemoglobin):
-Takes the arguments newel, newhemo, glucose, and hemoglobin. returns the distance array which contains the distance calculated to the new point from each point in the existing dataset. 
+Takes the arguments newglu, newhemo, glucose, and hemoglobin. returns the distance array which contains the distance calculated to the new point from each point in the existing dataset. 
 
 -def nearestNeighborClassifier(newglu, newhemo, glucose, hemoglobin, classification):
 Calls the distance function to find the min distance to the closest points to then read their classifications. returns the classification for the point (either a 0 or 1) based on the closest point. Returns an integer which is the class of the data point (test case).
