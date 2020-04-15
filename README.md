@@ -63,7 +63,7 @@ Takes the arguments glucose, hemoglobin, and classification. Normalizes each of 
 #centroid points.
 
 -def assign(array_centroids, glucose, hemoglobin):
-assigns each data point a label based on which centroid it is closest to. takes three arguments array_centroids, glucose, and hemoglobin. It then returns a numpy array of arguments.
+assigns each data point a label based on which centroid it is closest to. takes three arguments array_centroids, glucose, and hemoglobin. It then returns the assignment and distance of each point.
 
 -def update(k, assignment, glucose, hemoglobin):
 updates the location of each centroid based on the means of the data points assigned to that cluster. It takes four arguments k which is the number of clusters desired to use, assingment which is the array of assignments and glucose and hemoglobin. It then returns an array of updated centroids.
