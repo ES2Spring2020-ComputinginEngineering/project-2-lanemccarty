@@ -37,7 +37,7 @@ def select_centroids(k):
 def assign(array_centroids, glucose, hemoglobin):
 #assigns each data point a label based on which centroid it is closest to. 
 #takes three arguments array_centroids, glucose, and hemoglobin. It then returns
-#a numpy array of arguments
+#the assignment and distance of each point. 
     l = array_centroids.shape[0]
     distance = np.zeros((l,(len(glucose))))
     assignment = np.zeros((len(glucose)))
