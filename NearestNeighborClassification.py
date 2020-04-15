@@ -51,7 +51,7 @@ def createTestCase():
 #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 def calculateDistanceArray(newglu, newhemo, glucose, hemoglobin):
-#Takes the arguments newel, newhemo, glucose, and hemoglobin. returns the distance array which contains 
+#Takes the arguments newglu, newhemo, glucose, and hemoglobin. returns the distance array which contains 
 #the distance calculated to the new point from each point in the existing dataset. 
     distance = np.sqrt(((newglu-glucose)**2)+(newhemo-hemoglobin)**2)
     return distance
